@@ -8,10 +8,52 @@
     <!-- Meta Dados -->
     <meta name="description" content="Axel Consultoria é especialista em créditos de reciclagem no Brasil, promovendo sustentabilidade e compliance ambiental.">
     <meta name="keywords" content="créditos de reciclagem, sustentabilidade, logística reversa, consultoria ambiental">
-    <meta property="og:title" content="Axel Consultoria - Plataforma SaaS de Créditos de Reciclagem">
-    <meta property="og:description" content="Conectamos recicladores, indústrias e gestores em uma plataforma SaaS moderna e transparente.">
-    <meta property="og:image" content="./assets/images/banner.jpg">
+    <meta property="og:title" content="Axel Consultoria | Plataforma de créditos de reciclagem">
+    <meta property="og:description" content="Conectamos recicladores, indústrias e gestores públicos em uma solução digital para gerar impacto socioambiental real.">
+    <meta property="og:image" content="https://www.axelconsultoria.com.br/assets/images/banner.jpg">
+    <meta property="og:url" content="https://www.axelconsultoria.com.br/">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Axel Consultoria | Plataforma de créditos de reciclagem">
+    <meta name="twitter:description" content="Conectamos recicladores, indústrias e gestores públicos em uma solução digital para gerar impacto socioambiental real.">
+    <meta name="twitter:image" content="https://www.axelconsultoria.com.br/assets/images/banner.jpg">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "@id": "https://www.axelconsultoria.com.br/#organization",
+                    "name": "Axel Consultoria",
+                    "url": "https://www.axelconsultoria.com.br/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://www.axelconsultoria.com.br/assets/images/logo.png",
+                        "width": 512,
+                        "height": 512
+                    },
+                    "sameAs": [
+                        "https://www.linkedin.com",
+                        "https://www.instagram.com/axel.consultoria/",
+                        "https://www.facebook.com/people/Axel-Consultoria/61570702023946/"
+                    ]
+                },
+                {
+                    "@type": "Service",
+                    "name": "Plataforma e consultoria em créditos de reciclagem",
+                    "serviceType": "Consultoria ESG e créditos de reciclagem",
+                    "provider": {
+                        "@id": "https://www.axelconsultoria.com.br/#organization"
+                    },
+                    "areaServed": "Brasil",
+                    "description": "Soluções digitais e consultivas para conectar recicladores, indústrias e gestores públicos com rastreabilidade ESG.",
+                    "url": "https://www.axelconsultoria.com.br/servicos.html"
+                }
+            ]
+        }
+    </script>
+    <link rel="canonical" href="https://www.axelconsultoria.com.br/">
     <link rel="stylesheet" href="./assets/css/base.css">
     <!-- Link para o arquivo CSS externo -->
     <link rel="stylesheet" href="./assets/css/header.css">
@@ -65,7 +107,7 @@
                         class="facebook" title="Facebook" aria-label="Facebook">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="https://wa.me/5521964119992" target="_blank" rel="noopener" class="WhatsApp" title="WhatsApp"
+                    <a href="https://wa.me/5521995500927" target="_blank" rel="noopener" class="WhatsApp" title="WhatsApp"
                         aria-label="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
@@ -84,16 +126,16 @@
     </header>
     <main id="conteudo-principal" role="main" tabindex="-1">
     <!-- Banner Principal -->
-    <section class="banner" id="inicio">
+    <section class="banner" id="inicio" aria-labelledby="inicio-title">
         <div class="banner__overlay" aria-hidden="true"></div>
-        <video autoplay loop muted playsinline poster="assets/images/banner.jpg">
+        <video autoplay loop muted playsinline preload="none" poster="assets/images/banner.jpg">
             <source src="assets/videos/reciclagem-processo.mp4" type="video/mp4">
             <img src="assets/images/banner.jpg" alt="Créditos de reciclagem em destaque" loading="lazy">
         </video>
         <!-- Mensagem no Banner Principal -->
         <div class="container banner__content">
-            <span class="banner__eyebrow">Plataforma SaaS de créditos de reciclagem</span>
-            <h1>Conectamos recicladores e indústrias para gerar impacto real</h1>
+            <span class="banner__eyebrow">Plataforma de créditos de reciclagem</span>
+            <h1 id="inicio-title">Conectamos recicladores e indústrias para gerar impacto real</h1>
             <p>Centralize operações, automatize compliance e acompanhe indicadores ESG em tempo real com a plataforma Axel.</p>
 
             <!-- Botão CTA -->
@@ -110,9 +152,9 @@
         </div>
     </section>
     <!-- Seção Sobre Nós -->
-    <section class="sobre" id="sobre">
+    <section class="sobre" id="sobre" aria-labelledby="sobre-title">
         <div class="container">
-            <h2>Por que a Axel existe</h2>
+            <h2 id="sobre-title">Por que a Axel existe</h2>
             <div class="sobre__grid">
                 <article class="sobre__card">
                     <h3>Transparência de ponta a ponta</h3>
@@ -130,10 +172,10 @@
         </div>
     </section>
         <!-- Seção Nossos Serviços -->
-    <section id="servicos" class="content-section">
+    <section id="servicos" class="content-section" aria-labelledby="servicos-title">
         <div class="container">
             <span class="section-eyebrow">Soluções completas</span>
-            <h2>Como aceleramos sua jornada ESG</h2>
+            <h2 id="servicos-title">Como aceleramos sua jornada ESG</h2>
             <div class="services-list">
                 <div class="service">
                     <div class="icon">
@@ -172,10 +214,10 @@
         </div>
     </section>
     <!-- Nossos Impactos -->
-    <section id="impacto" class="impacto content-section" data-animate="false">
+    <section id="impacto" class="impacto content-section" data-animate="false" aria-labelledby="impacto-title">
         <div class="container">
             <span class="section-eyebrow">Impacto socioambiental</span>
-            <h2>Resultados e projeções de 2025</h2>
+            <h2 id="impacto-title">Resultados e projeções de 2025</h2>
             <p class="impacto__intro">Já comercializamos <strong>12.000 toneladas</strong> de créditos de reciclagem em 2025 e projetamos alcançar <strong>25.000 toneladas</strong> até dezembro, expandindo a rede de cooperativas e gerando liquidez imediata pelo CicloBank.</p>
 
             <div class="impacto__metrics">
@@ -195,9 +237,9 @@
                     <span class="metric-card__suffix">profissionais</span>
                 </div>
                 <div class="metric-card">
-                    <span class="metric-card__label">Cidades atendidas</span>
-                    <strong class="metric-card__value" data-counter data-target="36">0</strong>
-                    <span class="metric-card__suffix">municípios</span>
+                    <span class="metric-card__label">Estados atendidos</span>
+                    <strong class="metric-card__value" data-counter data-target="3">0</strong>
+                    <span class="metric-card__suffix">estados</span>
                 </div>
             </div>
 
@@ -234,22 +276,22 @@
 
             <div class="impacto__grid">
                 <article class="impacto__item">
-                    <img src="assets/images/icon-carbon.png" alt="Carbono">
+                    <img src="assets/images/icon-carbon.png" alt="Carbono" loading="lazy" decoding="async">
                     <h3>Carbono evitado</h3>
                     <p><strong>8.720 tCO₂e</strong> neutralizadas com créditos rastreados e certificados em 2025.</p>
                 </article>
                 <article class="impacto__item">
-                    <img src="assets/images/icon-tree.png" alt="Rede de recicladores">
+                    <img src="assets/images/icon-tree.png" alt="Rede de recicladores" loading="lazy" decoding="async">
                     <h3>Rede valorizada</h3>
                     <p>Mais de <strong>480 recicladores</strong> e cooperativas receberam pagamentos com SLA de 3 dias.</p>
                 </article>
                 <article class="impacto__item">
-                    <img src="assets/images/icon-mining.png" alt="Logística reversa">
+                    <img src="assets/images/icon-mining.png" alt="Logística reversa" loading="lazy" decoding="async">
                     <h3>Logística reversa</h3>
                     <p><strong>1,1 milhão kg</strong> de materiais retornaram à cadeia produtiva com lastro fiscal garantido.</p>
                 </article>
                 <article class="impacto__item">
-                    <img src="assets/images/icon-water.png" alt="Gestão hídrica">
+                    <img src="assets/images/icon-water.png" alt="Gestão hídrica" loading="lazy" decoding="async">
                     <h3>Gestão hídrica</h3>
                     <p>Monitoramento contínuo com economia de <strong>62 milhões de litros</strong> em processos industriais.</p>
                 </article>
@@ -257,18 +299,18 @@
         </div>
     </section>
 
-    <section id="depoimentos" class="content-section">
+    <section id="depoimentos" class="content-section" aria-labelledby="depoimentos-title">
         <div class="container">
             <div class="testimonial__header">
                 <span class="section-eyebrow">Histórias reais</span>
-                <h2>Parcerias que impulsionam a economia circular</h2>
+                <h2 id="depoimentos-title">Parcerias que impulsionam a economia circular</h2>
                 <p>Resultados comprovados por clientes e cooperativas que utilizam a plataforma Axel para gerar impacto.</p>
             </div>
             <div class="banner-container">
                 <div class="banner-wrapper">
                     <!-- Depoimento 1 -->
                     <div class="banner-slide">
-                        <img src="assets/images/arbor.jpeg" alt="Logo Arbor Reciclagem" class="testimonial-logo">
+                        <img src="assets/images/arbor.jpeg" alt="Logo Arbor Reciclagem" class="testimonial-logo" loading="lazy" decoding="async">
                         <div class="testimonial-text">
                             <p>"Eu nem sabia que existia crédito de reciclagem. O pessoal da Axel me explicou e me ajudou com a venda, cuidando de todos os detalhes."</p>
                             <p class="author">Claucio Xavier</p>
@@ -279,9 +321,9 @@
 
                     <!-- Depoimento 2 -->
                     <div class="banner-slide">
-                        <img src="assets/images/recmais.jpg" alt="Logo Rec+" class="testimonial-logo">
+                        <img src="assets/images/recmais.jpg" alt="Logo Rec+" class="testimonial-logo" loading="lazy" decoding="async">
                         <div class="testimonial-text">
-                            <p>"Com o apoio da Axel Gestão, a RecMais superou a marca de 3.000 toneladas captadas e monetizadas pela plataforma."</p>
+                            <p>"Com o apoio da Axel Gestão, a RecMais superou a marca de 3.000 toneladas captadas e monetizadas pela plataforma em 2024."</p>
                             <p class="author">Fernanda Castro</p>
                             <p class="company">CEO da Rec+</p>
                             <a href="./industria.html" class="testimonial-link">Saiba como</a>
@@ -290,10 +332,10 @@
 
                     <!-- Depoimento 3 -->
                     <div class="banner-slide">
-                        <img src="assets/images/ciclobank.png" alt="Logo CicloBank" class="testimonial-logo">
+                        <img src="assets/images/ciclobank.png" alt="Logo CicloBank" class="testimonial-logo" loading="lazy" decoding="async">
                         <div class="testimonial-text">
                             <p>"A Axel foi essencial para o sucesso do CicloBank, garantindo clareza e confiança na precificação dos créditos."</p>
-                            <p class="author">Marcelo Lopes</p>
+                            <p class="author">Ricardo Almeida</p>
                             <p class="company">Fundador do CicloBank</p>
                             <a href="./sobre.html" class="testimonial-link">Ler depoimento completo</a>
                         </div>
@@ -335,9 +377,9 @@
                 <!-- Coluna 3: Contato -->
                 <div class="footer-column">
                     <h3>Contato</h3>
-                    <p><i class="fas fa-envelope"></i> contato@axelconsultoria.com.br</p>
-                    <p><i class="fas fa-phone-alt"></i> +55 (21) 96411-9992</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Rua Jangadeiros 48, 2º andar - Ipanema - Rio de Janeiro, RJ
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> contato@axelconsultoria.com.br</p>
+                    <p><i class="fas fa-phone-alt" aria-hidden="true"></i> +55 (21) 99550-0927</p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Rua Jangadeiros 48, 2º andar - Ipanema - Rio de Janeiro, RJ
                     </p>
                 </div>
 
@@ -347,40 +389,39 @@
                     <div class="social-footer">
                         <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="linkedin" title="LinkedIn"
                             aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.instagram.com/axel.consultoria/" target="_blank" rel="noopener" class="Instagram"
                             title="Instagram" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.facebook.com/people/Axel-Consultoria/61570702023946/" target="_blank" rel="noopener"
                             class="facebook" title="Facebook" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
                         </a>
-                        <a href="https://wa.me/5521964119992" target="_blank" rel="noopener" class="WhatsApp" title="WhatsApp"
+                        <a href="https://wa.me/5521995500927" target="_blank" rel="noopener" class="WhatsApp" title="WhatsApp"
                             aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
                         </a>
                         <!-- Ícone de E-mail com link mailto -->
                         <a href="mailto:contato@axelconsultoria.com.br" target="_blank" rel="noopener" class="email"
                             title="Enviar e-mail para contato@axelconsultoria.com.br" aria-label="E-mail">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                         </a>
                     </div>
-
-                <!-- Rodapé Secundário -->
-                <div class="footer-bottom" id="contato">
-                    <p>&copy; 2025 Axel Consultoria. Todos os direitos reservados.</p>
-                    <p>Certificações: ISO 14001 • PNRS • IBAMA</p>
                 </div>
             </div>
-        </div>
+
+            <!-- Rodapé Secundário -->
+            <div class="footer-bottom" id="contato">
+                <p>&copy; 2025 Axel Consultoria. Todos os direitos reservados.</p>
+            </div>
         </div>
     </footer>
 
     <!-- Botão do WhatsApp flutuante -->
-    <a href="https://wa.me/5521964119992" rel="noopener" class="whatsapp-button" target="_blank">
-        <img src="./assets/images/whatsapp-icon.png" alt="WhatsApp">
+    <a href="https://wa.me/5521995500927" rel="noopener" class="whatsapp-button" target="_blank">
+        <img src="./assets/images/whatsapp-icon.png" alt="WhatsApp" loading="lazy" decoding="async">
     </a>
     <!-- Link para o arquivo JavaScript externo -->
     <script src="./assets/js/header.js"></script>
