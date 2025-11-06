@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const section = document.querySelector("#impacto");
   const counters = document.querySelectorAll("[data-counter]");
+  const impactoSection = document.querySelector("#impacto");
+  const chartLine = document.querySelector(".impacto__chart-line");
+  let impactoObserver;
 
   if (!section || counters.length === 0) {
     return;
@@ -8,6 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const formatNumber = (value) =>
     new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 0 }).format(value);
+
+  if (chartLine && typeof chartLine.getTotalLength === "function") {
+    const lineLength = chartLine.getTotalLength();
+    chartLine.style.setProperty("--impacto-line-length", lineLength);
+  }
 
   const animateCounter = (element) => {
     const target = Number(element.dataset.target || 0);
@@ -28,18 +36,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }, frameRate);
   };
 
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          counters.forEach((counter) => animateCounter(counter));
-          obs.unobserve(entry.target);
+  if (impactoSection) {
+    impactoObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && impactoSection.dataset.animate === 'false') {
+          counters.forEach(counter => animateCounter(counter));
+          impactoSection.dataset.animate = 'true';
+          obs.disconnect();
         }
       });
-    },
-    { threshold: 0.3 }
-  );
+    }, {
+      threshold: 0.35
+    });
 
-  observer.observe(section);
+    impactoObserver.observe(impactoSection);
+  }
 });
-

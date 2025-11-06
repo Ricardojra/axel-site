@@ -28,6 +28,12 @@
     gap: clamp(24px, 4vw, 36px);
 }
 
+.services-list .service,
+.services-list .service h3,
+.services-list .service ul li {
+    color: #f8fafc;
+}
+
 .service-card {
     background: linear-gradient(140deg, rgba(15, 23, 42, 0.85), rgba(37, 99, 235, 0.35));
     border-radius: var(--radius-lg);
@@ -75,7 +81,7 @@
     grid-template-columns: auto 1fr;
     gap: 10px;
     align-items: start;
-    color: rgba(226, 232, 240, 0.82);
+    color: #f8fafc;
 }
 
 .service-card ul li::before {
@@ -112,7 +118,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    color: rgba(226, 232, 240, 0.85);
+    color: #f8fafc;
 }
 
 .services-benefits ul li i {

@@ -1,9 +1,11 @@
 /* Estilo Geral da Seção Nossos Impactos */
 .impacto {
-    background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.18), transparent 50%), #f8fafc;
+    background:
+        radial-gradient(circle at 18% 18%, rgba(59, 130, 246, 0.34), transparent 58%),
+        radial-gradient(circle at 82% 80%, rgba(99, 102, 241, 0.28), transparent 60%),
+        linear-gradient(180deg, rgba(8, 18, 40, 1) 0%, rgba(15, 23, 42, 0.96) 52%, rgba(15, 23, 42, 0.98) 100%);
     padding: clamp(72px, 12vw, 120px) 0;
-    color: #0f172a;
+    color: #e2e8f0;
 }
 
 .impacto .container {
@@ -15,9 +17,13 @@
 .impacto__intro {
     max-width: 720px;
     margin-top: 16px;
-    color: #1e293b;
+    color: rgba(241, 245, 249, 0.9);
     font-size: 1.08rem;
     line-height: 1.6;
+}
+
+.impacto__intro strong {
+    color: #f8fafc;
 }
 
 .impacto__metrics {
@@ -73,11 +79,12 @@
 
 .impacto__chart {
     margin-top: clamp(40px, 8vw, 64px);
-    background: #ffffff;
+    background: linear-gradient(160deg, rgba(15, 23, 42, 0.92), rgba(37, 99, 235, 0.35));
     border-radius: 24px;
     padding: clamp(24px, 5vw, 36px);
-    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.12);
-    border: 1px solid rgba(148, 163, 184, 0.2);
+    box-shadow: 0 35px 65px rgba(8, 11, 27, 0.55);
+    border: 1px solid rgba(99, 102, 241, 0.22);
+    backdrop-filter: blur(12px);
 }
 
 .impacto__chart-header {
@@ -87,8 +94,13 @@
     margin-bottom: 20px;
 }
 
+.impacto__chart-header h3 {
+    color: #f8fafc;
+    margin: 0;
+}
+
 .impacto__chart-header span {
-    color: #64748b;
+    color: rgba(203, 213, 225, 0.85);
     font-size: 0.9rem;
 }
 
@@ -99,7 +111,7 @@
 }
 
 .impacto__chart-axis {
-    stroke: rgba(148, 163, 184, 0.45);
+    stroke: rgba(226, 232, 240, 0.25);
     stroke-width: 1.5;
 }
 
@@ -107,18 +119,20 @@
     stroke: url(#impactoLineGradient);
     stroke-width: 4;
     fill: none;
-    stroke-dasharray: 420;
-    stroke-dashoffset: 420;
-    transition: stroke-dashoffset 1.6s ease;
+    stroke-dasharray: var(--impacto-line-length, 420);
+    stroke-dashoffset: var(--impacto-line-length, 420);
+    transition: stroke-dashoffset 1.8s ease;
+    filter: drop-shadow(0 4px 12px rgba(56, 189, 248, 0.35));
 }
 
 .impacto__chart-points circle {
     fill: #38bdf8;
-    stroke: #fff;
+    stroke: #0f172a;
     stroke-width: 2;
     transform-origin: center;
-    transform: scale(0);
-    transition: transform 0.4s ease;
+    transform: scale(0.3);
+    opacity: 0;
+    transition: transform 0.45s ease, opacity 0.45s ease;
 }
 
 .impacto[data-animate="true"] .impacto__chart-line {
@@ -127,6 +141,7 @@
 
 .impacto[data-animate="true"] .impacto__chart-points circle {
     transform: scale(1);
+    opacity: 1;
 }
 
 .impacto[data-animate="true"] .impacto__chart-points circle:nth-child(2) {
@@ -153,7 +168,7 @@
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 16px;
     font-size: 0.9rem;
-    color: #1e293b;
+    color: rgba(226, 232, 240, 0.88);
 }
 
 .impacto__chart-legend li {
@@ -162,12 +177,12 @@
     gap: 4px;
     padding: 12px 14px;
     border-radius: 16px;
-    background: rgba(148, 163, 184, 0.12);
+    background: rgba(15, 23, 42, 0.55);
 }
 
 .impacto__chart-legend strong {
     font-size: 1rem;
-    color: #0f172a;
+    color: #f8fafc;
 }
 
 .impacto__grid {
