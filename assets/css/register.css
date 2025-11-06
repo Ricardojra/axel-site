@@ -1,0 +1,86 @@
+.register-section {
+    padding: clamp(64px, 12vw, 120px) 0;
+}
+
+.register-grid {
+    display: grid;
+    gap: clamp(24px, 4vw, 36px);
+}
+
+.register-hero {
+    display: grid;
+    gap: 16px;
+}
+
+.register-hero h1 {
+    margin: 0;
+}
+
+.register-form {
+    display: grid;
+    gap: 18px;
+}
+
+.register-form label {
+    display: grid;
+    gap: 8px;
+    color: rgba(226, 232, 240, 0.85);
+    font-size: 0.95rem;
+}
+
+.register-form input,
+.register-form select {
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    background: rgba(15, 23, 42, 0.45);
+    color: #f8fafc;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+    border-color: var(--color-accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+.register-form small {
+    font-size: 0.78rem;
+    color: rgba(226, 232, 240, 0.6);
+}
+
+.register-form__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.register-form__actions p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(226, 232, 240, 0.75);
+}
+
+.register-form__actions a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.register-form__actions a:hover {
+    color: var(--color-accent-alt);
+}
+
+@media (max-width: 768px) {
+    .register-hero {
+        text-align: center;
+    }
+
+    .register-hero p {
+        margin: 0 auto;
+    }
+
+    .register-form__actions {
+        align-items: center;
+    }
+}

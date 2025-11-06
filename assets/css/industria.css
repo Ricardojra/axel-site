@@ -1,0 +1,65 @@
+.industria__cta {
+    margin-top: clamp(40px, 6vw, 60px);
+    display: grid;
+    gap: clamp(18px, 4vw, 28px);
+    align-items: start;
+}
+
+.industria__cta h2 {
+    margin: 0;
+    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+}
+
+.industria__steps {
+    counter-reset: industria-step;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 16px;
+}
+
+.industria__steps li {
+    position: relative;
+    padding-left: 56px;
+    font-size: 0.98rem;
+    color: rgba(226, 232, 240, 0.82);
+    line-height: 1.6;
+}
+
+.industria__steps li::before {
+    counter-increment: industria-step;
+    content: counter(industria-step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+    display: grid;
+    place-content: center;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-alt));
+    color: #0b1120;
+    box-shadow: 0 14px 30px rgba(56, 189, 248, 0.25);
+}
+
+.industria__cta .btn {
+    justify-self: start;
+}
+
+@media (max-width: 640px) {
+    .industria__steps li {
+        padding-left: 48px;
+    }
+
+    .industria__steps li::before {
+        width: 36px;
+        height: 36px;
+    }
+
+    .industria__cta .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

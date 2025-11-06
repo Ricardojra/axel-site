@@ -1,0 +1,125 @@
+.contact-grid {
+    display: grid;
+    gap: clamp(24px, 4vw, 32px);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: clamp(32px, 6vw, 48px);
+}
+
+.contact-form__form {
+    display: grid;
+    gap: 18px;
+}
+
+.contact-form label {
+    display: grid;
+    gap: 10px;
+    color: rgba(226, 232, 240, 0.86);
+    font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    background: rgba(15, 23, 42, 0.45);
+    color: #f8fafc;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.contact-form__actions {
+    display: grid;
+    gap: 12px;
+}
+
+.contact-form__disclaimer {
+    margin: 0;
+    font-size: 0.85rem;
+    color: rgba(226, 232, 240, 0.66);
+}
+
+.contact-form__disclaimer a {
+    color: var(--color-accent);
+}
+
+.contact-info {
+    display: grid;
+    gap: 24px;
+}
+
+.contact-info__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 18px;
+}
+
+.contact-info__list li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 18px;
+    align-items: start;
+}
+
+.contact-info__list i {
+    font-size: 1.35rem;
+    color: var(--color-accent);
+    background: rgba(56, 189, 248, 0.15);
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: grid;
+    place-content: center;
+}
+
+.contact-info__list strong {
+    display: block;
+    color: #f8fafc;
+    margin-bottom: 4px;
+}
+
+.contact-info__list span,
+.contact-info__list a {
+    color: rgba(226, 232, 240, 0.78);
+    text-decoration: none;
+}
+
+.contact-info__list a:hover {
+    color: var(--color-accent);
+}
+
+.contact-info__cta {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.map iframe {
+    border-radius: 5px;
+    width: 100%;
+    height: 350px;
+    border: 0;
+}
+
+@media (max-width: 640px) {
+    .contact-info__list {
+        gap: 16px;
+    }
+
+    .contact-info__list li {
+        gap: 14px;
+    }
+}

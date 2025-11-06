@@ -1,0 +1,89 @@
+/* Arquivo: sobre.css */
+
+/* Estilo Geral */
+.sobre {
+    padding: 6rem 0;
+    background: radial-gradient(circle at top right, rgba(14, 165, 233, 0.16), transparent 55%), #ffffff;
+    scroll-margin-top: 120px;
+}
+
+/* Container Responsivo */
+.sobre .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    text-align: center;
+}
+
+/* Título */
+.sobre h2 {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 2.5rem;
+}
+
+/* Grid de Cards */
+.sobre__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    text-align: left;
+}
+
+/* Card */
+.sobre__card {
+    background: #f8fafc;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 22px 45px rgba(148, 163, 184, 0.2);
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Efeito Hover no Card */
+.sobre__card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 60px rgba(15, 23, 42, 0.18);
+}
+
+/* Título do Card */
+.sobre__card h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #1d4ed8;
+}
+
+/* Parágrafo do Card */
+.sobre__card p {
+    margin: 0;
+    color: #475569;
+    line-height: 1.6;
+    font-size: 0.98rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sobre {
+        padding: 4.5rem 0;
+    }
+
+    .sobre__card {
+        padding: 24px;
+    }
+}
+
+/* Modo Escuro */
+@media (prefers-color-scheme: dark) {
+    .sobre {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+
+    .sobre h2 {
+        color: #bb86fc;
+    }
+}
