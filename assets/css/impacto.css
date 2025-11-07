@@ -85,6 +85,28 @@
     box-shadow: 0 35px 65px rgba(8, 11, 27, 0.55);
     border: 1px solid rgba(99, 102, 241, 0.22);
     backdrop-filter: blur(12px);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.impacto__chart::after {
+    content: "";
+    position: absolute;
+    inset: -18% -28%;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.35), transparent 60%),
+        linear-gradient(115deg, rgba(56, 189, 248, 0.22), rgba(129, 140, 248, 0));
+    opacity: 0;
+    transform: translateX(-32%) scale(0.85);
+    filter: blur(14px);
+    pointer-events: none;
+    mix-blend-mode: screen;
+    z-index: 0;
+}
+
+.impacto[data-animate="true"] .impacto__chart::after {
+    animation: impactoChartSweep 1.6s ease-out 0.2s forwards;
 }
 
 .impacto__chart-header {
@@ -108,6 +130,8 @@
     width: 100%;
     height: auto;
     overflow: visible;
+    position: relative;
+    z-index: 1;
 }
 
 .impacto__chart-axis {
@@ -121,8 +145,11 @@
     fill: none;
     stroke-dasharray: var(--impacto-line-length, 420);
     stroke-dashoffset: var(--impacto-line-length, 420);
-    transition: stroke-dashoffset 1.8s ease;
+    transition: stroke-dashoffset 1.8s cubic-bezier(0.22, 1, 0.36, 1);
     filter: drop-shadow(0 4px 12px rgba(56, 189, 248, 0.35));
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    will-change: stroke-dashoffset;
 }
 
 .impacto__chart-points circle {
@@ -130,34 +157,84 @@
     stroke: #0f172a;
     stroke-width: 2;
     transform-origin: center;
-    transform: scale(0.3);
+    transform: translateY(12px) scale(0.48);
     opacity: 0;
-    transition: transform 0.45s ease, opacity 0.45s ease;
+    filter: drop-shadow(0 3px 6px rgba(15, 23, 42, 0.35));
+    will-change: transform, opacity;
 }
 
 .impacto[data-animate="true"] .impacto__chart-line {
     stroke-dashoffset: 0;
+    animation: impactoLineGlow 2.3s ease-out 0.45s forwards;
 }
 
 .impacto[data-animate="true"] .impacto__chart-points circle {
-    transform: scale(1);
-    opacity: 1;
+    animation: impactoPointPop 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 .impacto[data-animate="true"] .impacto__chart-points circle:nth-child(2) {
-    transition-delay: 0.1s;
+    animation-delay: 0.1s;
 }
 
 .impacto[data-animate="true"] .impacto__chart-points circle:nth-child(3) {
-    transition-delay: 0.2s;
+    animation-delay: 0.18s;
 }
 
 .impacto[data-animate="true"] .impacto__chart-points circle:nth-child(4) {
-    transition-delay: 0.3s;
+    animation-delay: 0.26s;
 }
 
 .impacto[data-animate="true"] .impacto__chart-points circle:nth-child(5) {
-    transition-delay: 0.4s;
+    animation-delay: 0.34s;
+}
+
+.impacto__chart-points .data-point {
+    transform-origin: center;
+}
+
+.impacto__chart-points .data-point circle {
+    transition: none;
+}
+
+.impacto__chart-points .data-point .data-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    fill: #f8fafc;
+    text-anchor: middle;
+    opacity: 0;
+    transform: translateY(16px);
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+.impacto__chart-points .data-point .data-label tspan {
+    fill: rgba(226, 232, 240, 0.82);
+    font-size: 0.58rem;
+    font-weight: 500;
+}
+
+.impacto[data-animate="true"] .impacto__chart-points .data-point .data-label {
+    animation: impactoLabelFade 0.6s ease forwards;
+}
+
+.impacto[data-animate="true"] .impacto__chart-points .data-point:nth-child(1) .data-label {
+    animation-delay: 0.2s;
+}
+
+.impacto[data-animate="true"] .impacto__chart-points .data-point:nth-child(2) .data-label {
+    animation-delay: 0.32s;
+}
+
+.impacto[data-animate="true"] .impacto__chart-points .data-point:nth-child(3) .data-label {
+    animation-delay: 0.44s;
+}
+
+.impacto[data-animate="true"] .impacto__chart-points .data-point:nth-child(4) .data-label {
+    animation-delay: 0.56s;
+}
+
+.impacto[data-animate="true"] .impacto__chart-points .data-point:nth-child(5) .data-label {
+    animation-delay: 0.68s;
 }
 
 .impacto__chart-legend {
