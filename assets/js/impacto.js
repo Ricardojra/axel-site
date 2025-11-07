@@ -1,11 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const section = document.querySelector("#impacto");
-  const counters = document.querySelectorAll("[data-counter]");
   const impactoSection = document.querySelector("#impacto");
+  const counters = document.querySelectorAll("[data-counter]");
   const chartLine = document.querySelector(".impacto__chart-line");
-  let impactoObserver;
 
-  if (!section || counters.length === 0) {
+  if (!impactoSection || counters.length === 0) {
     return;
   }
 
@@ -36,19 +34,43 @@ document.addEventListener("DOMContentLoaded", () => {
     }, frameRate);
   };
 
-  if (impactoSection) {
-    impactoObserver = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && impactoSection.dataset.animate === 'false') {
-          counters.forEach(counter => animateCounter(counter));
-          impactoSection.dataset.animate = 'true';
+  const showFinalValue = (element) => {
+    const target = Number(element.dataset.target || 0);
+    element.textContent = formatNumber(target);
+  };
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const triggerAnimations = () => {
+    if (impactoSection.dataset.animate === "true") {
+      return;
+    }
+
+    impactoSection.dataset.animate = "true";
+
+    if (prefersReducedMotion) {
+      counters.forEach(showFinalValue);
+      return;
+    }
+
+    counters.forEach(animateCounter);
+  };
+
+  if ("IntersectionObserver" in window) {
+    const impactoObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          triggerAnimations();
           obs.disconnect();
         }
       });
     }, {
-      threshold: 0.35
+      threshold: 0.15,
+      rootMargin: "0px 0px -20% 0px"
     });
 
     impactoObserver.observe(impactoSection);
+  } else {
+    triggerAnimations();
   }
 });
