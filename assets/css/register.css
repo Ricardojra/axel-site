@@ -5,11 +5,14 @@
 .register-grid {
     display: grid;
     gap: clamp(24px, 4vw, 36px);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: stretch;
 }
 
 .register-hero {
     display: grid;
     gap: 16px;
+    max-width: 680px;
 }
 
 .register-hero h1 {
@@ -24,30 +27,31 @@
 .register-form label {
     display: grid;
     gap: 8px;
-    color: rgba(226, 232, 240, 0.85);
-    font-size: 0.95rem;
+    color: rgba(241, 245, 249, 0.95);
+    font-size: 0.98rem;
 }
 
 .register-form input,
 .register-form select {
     padding: 14px 16px;
     border-radius: var(--radius-sm);
-    border: 1px solid rgba(148, 163, 184, 0.28);
-    background: rgba(15, 23, 42, 0.45);
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    background: rgba(15, 23, 42, 0.6);
     color: #f8fafc;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .register-form input:focus,
 .register-form select:focus {
     border-color: var(--color-accent);
     outline: none;
+    background: rgba(15, 23, 42, 0.8);
     box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
 }
 
 .register-form small {
-    font-size: 0.78rem;
-    color: rgba(226, 232, 240, 0.6);
+    font-size: 0.82rem;
+    color: rgba(226, 232, 240, 0.72);
 }
 
 .register-form__actions {
@@ -58,22 +62,31 @@
 
 .register-form__actions p {
     margin: 0;
-    font-size: 0.9rem;
-    color: rgba(226, 232, 240, 0.75);
+    font-size: 0.92rem;
+    color: rgba(241, 245, 249, 0.85);
 }
 
 .register-form__actions a {
     color: var(--color-accent);
     text-decoration: none;
+    font-weight: 600;
 }
 
 .register-form__actions a:hover {
     color: var(--color-accent-alt);
 }
 
+@media (min-width: 992px) {
+    .register-grid {
+        grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+        align-items: center;
+    }
+}
+
 @media (max-width: 768px) {
     .register-hero {
         text-align: center;
+        margin: 0 auto;
     }
 
     .register-hero p {

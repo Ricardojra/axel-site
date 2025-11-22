@@ -1,6 +1,7 @@
 function toggleMenu() {
   const navigation = document.querySelector(".navigation");
   const hamburger = document.querySelector(".hamburger-menu");
+  const body = document.body;
 
   if (!navigation || !hamburger) {
     return;
@@ -10,6 +11,7 @@ function toggleMenu() {
   const isActive = navigation.classList.contains("active");
   hamburger.classList.toggle("is-active", isActive);
   hamburger.setAttribute("aria-expanded", String(isActive));
+  body.classList.toggle("is-nav-open", isActive);
 }
 
 document.addEventListener("DOMContentLoaded", () => {

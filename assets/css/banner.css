@@ -1,6 +1,7 @@
 /* Banner Principal - Imagem e Vídeo de Fundo */
 .banner {
     position: relative;
+
     min-height: 100vh;
     overflow: hidden;
     display: flex;

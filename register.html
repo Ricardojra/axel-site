@@ -24,7 +24,251 @@
     <link rel="stylesheet" href="./assets/css/footer.css">
     <link rel="stylesheet" href="./assets/css/whastapp.css">
     <link rel="stylesheet" href="./assets/css/login.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="./assets/vendor/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="site-header" id="topo">
+        <div class="site-header__inner">
+            <div class="logo">
+                <a href="./index.html#inicio" aria-label="Axel Consultoria">
+                    <img src="./assets/images/logo.png" alt="Axel Consultoria">
+                </a>
+            </div>
+
+            <nav class="navigation" id="primary-navigation" aria-label="Menu principal">
+                <ul>
+                    <li><a href="./index.html#inicio">Início</a></li>
+                    <li><a href="./sobre.html">Sobre</a></li>
+                    <li><a href="./industria.html">Indústrias</a></li>
+                    <li><a href="./recicladores.html">Recicladores</a></li>
+                    <li><a href="./servicos.html">Serviços</a></li>
+                    <li><a href="./index.html#impacto">Impacto</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                    <li><a href="./register.html" aria-current="page">Cadastro</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="social-icons" aria-label="Redes sociais Axel">
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="linkedin" title="LinkedIn"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/axel.consultoria/" target="_blank" rel="noopener" class="Instagram"
+                        title="Instagram" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/people/Axel-Consultoria/61570702023946/" target="_blank" rel="noopener"
+                        class="facebook" title="Facebook" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/5521995500927" target="_blank" rel="noopener" class="WhatsApp" title="WhatsApp"
+                        aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+                <button class="btn btn--ghost" type="button" data-login-trigger>
+                    Entrar
+                </button>
+            </div>
+
+            <button class="hamburger-menu" type="button" onclick="toggleMenu()" aria-label="Alternar menu"
+                aria-expanded="false" aria-controls="primary-navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main id="conteudo-principal" role="main" tabindex="-1">
+        <section class="register-section content-section" aria-labelledby="register-title">
+            <div class="container register-grid">
+                <div class="register-hero">
+                    <span class="section-eyebrow">Faça parte da Axel</span>
+                    <h1 id="register-title">Cadastre-se e receba acesso prioritário ao CicloBank</h1>
+                    <p>Garanta sua participação na plataforma bancarizada que conecta recicladores, cooperativas e indústria com
+                        controle financeiro, rastreabilidade ESG e pagamentos instantâneos.</p>
+                </div>
+
+                <div class="surface">
+                    <form class="register-form" novalidate>
+                        <label for="name">
+                            <span>Nome completo</span>
+                            <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required autocomplete="name">
+                        </label>
+
+                        <label for="company">
+                            <span>Empresa/Cooperativa</span>
+                            <input type="text" id="company" name="company" placeholder="Digite o nome da organização" autocomplete="organization">
+                        </label>
+
+                        <label for="email">
+                            <span>E-mail corporativo</span>
+                            <input type="email" id="email" name="email" placeholder="nome@empresa.com" required autocomplete="email">
+                        </label>
+
+                        <label for="role">
+                            <span>Cargo</span>
+                            <input type="text" id="role" name="role" placeholder="Ex.: Diretor ESG, Líder de Cooperativa">
+                        </label>
+
+                        <label for="phone">
+                            <span>Telefone/WhatsApp</span>
+                            <input type="tel" id="phone" name="phone" placeholder="(21) 99550-0927" autocomplete="tel">
+                        </label>
+
+                        <label for="password">
+                            <span>Crie uma senha</span>
+                            <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" required autocomplete="new-password">
+                            <small>Use letras, números e um caractere especial.</small>
+                        </label>
+
+                        <label for="confirm-password">
+                            <span>Confirme a senha</span>
+                            <input type="password" id="confirm-password" name="confirm-password" placeholder="Repita a senha" required autocomplete="new-password">
+                        </label>
+
+                        <div class="register-form__actions">
+                            <button class="btn btn--primary" type="submit">Cadastrar interesse</button>
+                            <p>Ao enviar, você concorda com nossos <a href="./politica-privacidade.html">termos e política de privacidade</a>.</p>
+                            <p>Já possui acesso? <a href="./login.html">Entrar na plataforma</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Sobre Nós</h3>
+                    <p>
+                        Somos especialistas em créditos de reciclagem e soluções ESG que conectam recicladores, indústrias e
+                        gestores públicos com transparência e tecnologia.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <div class="footer-menu">
+                        <a href="./index.html#inicio">Início</a>
+                        <a href="./index.html#sobre">Sobre</a>
+                        <a href="./index.html#servicos">Serviços</a>
+                        <a href="./index.html#impacto">Impacto</a>
+                        <a href="./contato.html">Contato</a>
+                        <a href="./politica-privacidade.html">Política de Privacidade</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> contato@axelconsultoria.com.br</p>
+                    <p><i class="fas fa-phone-alt" aria-hidden="true"></i> +55 (21) 99550-0927</p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Rua Jangadeiros 48, 2º andar - Ipanema - Rio de Janeiro, RJ</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Conecte-se</h3>
+                    <div class="social-footer">
+                        <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="linkedin" title="LinkedIn"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/axel.consultoria/" target="_blank" rel="noopener" class="Instagram"
+                            title="Instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.facebook.com/people/Axel-Consultoria/61570702023946/" target="_blank" rel="noopener"
+                            class="facebook" title="Facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://wa.me/5521995500927" target="_blank" rel="noopener" class="WhatsApp" title="WhatsApp"
+                            aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                        <a href="mailto:contato@axelconsultoria.com.br" class="email" title="Enviar e-mail" aria-label="E-mail">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Axel Consultoria. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5521995500927" rel="noopener" class="whatsapp-button" target="_blank">
+        <img src="./assets/images/whatsapp-icon.png" alt="WhatsApp">
+    </a>
+
+    <script src="./assets/js/header.js"></script>
+    <script src="./assets/js/login.js"></script>
+
+    <div class="login-modal" id="login-modal" aria-hidden="true">
+        <div class="login-modal__backdrop" data-login-dismiss></div>
+        <div class="login-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+            <button class="login-modal__close" type="button" data-login-dismiss aria-label="Fechar modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="login-modal__header">
+                <span class="login-modal__eyebrow">Acesso restrito</span>
+                <h2 id="login-modal-title">Entrar na Plataforma Axel</h2>
+                <p>Utilize suas credenciais corporativas para acessar o painel SaaS. Em caso de dúvidas, entre em contato com o nosso time de suporte.</p>
+            </div>
+            <form class="login-form" novalidate>
+                <label class="login-form__field">
+                    <span>E-mail corporativo</span>
+                    <input type="email" name="email" placeholder="nome@empresa.com" required>
+                </label>
+                <label class="login-form__field">
+                    <span>Senha</span>
+                    <input type="password" name="password" placeholder="Digite sua senha" required>
+                </label>
+                <div class="login-form__actions">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember">
+                        <span>Manter-me conectado</span>
+                    </label>
+                    <a href="./recuperar-senha.html">Esqueci minha senha</a>
+                </div>
+                <button class="btn btn--primary" type="submit">Entrar na plataforma</button>
+            </form>
+            <div class="login-modal__footer">
+                <p>Ainda não é cliente? <a href="./register.html">Solicitar demonstração</a></p>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axel Consultoria - Cadastro</title>
+    <meta name="description"
+        content="Cadastre-se para acompanhar o lançamento da plataforma CicloBank e receber novidades sobre créditos de reciclagem e ESG.">
+    <meta name="keywords" content="cadastro Axel Consultoria, criar conta CicloBank, créditos de reciclagem">
+    <meta property="og:title" content="Cadastro Plataforma Axel">
+    <meta property="og:description" content="Garanta acesso prioritário ao CicloBank e receba conteúdos sobre créditos de reciclagem e ESG.">
+    <meta property="og:image" content="https://www.axelconsultoria.com.br/assets/images/service4.jpg">
+    <meta property="og:url" content="https://www.axelconsultoria.com.br/register.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cadastro Plataforma Axel">
+    <meta name="twitter:description" content="Garanta acesso prioritário ao CicloBank e receba conteúdos sobre créditos de reciclagem e ESG.">
+    <meta name="twitter:image" content="https://www.axelconsultoria.com.br/assets/images/service4.jpg">
+    <link rel="canonical" href="https://www.axelconsultoria.com.br/register.html">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/register.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/whastapp.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link href="./assets/vendor/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 </head>
@@ -247,5 +491,4 @@
         </div>
     </div>
 </body>
-
 </html>

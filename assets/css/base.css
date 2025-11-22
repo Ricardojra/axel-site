@@ -21,10 +21,22 @@
     --shadow-lg: 0 30px 80px rgba(8, 47, 73, 0.45);
     --shadow-md: 0 18px 40px rgba(8, 47, 73, 0.3);
     --shadow-soft: 0 12px 25px rgba(15, 23, 42, 0.2);
+    --spacing-lg: clamp(32px, 6vw, 64px);
+    --spacing-xl: clamp(48px, 8vw, 96px);
+    --line-height-tight: 1.2;
+    --line-height-relaxed: 1.7;
+    --font-size-display: clamp(2.4rem, 4.5vw, 3.6rem);
+    --font-size-h2: clamp(1.9rem, 3.5vw, 2.6rem);
+    --font-size-h3: clamp(1.4rem, 2.5vw, 1.85rem);
+    --transition-base: 0.25s ease;
 }
 
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 html,
@@ -41,6 +53,19 @@ body {
     min-height: 100vh;
 }
 
+body.is-nav-open {
+    overflow: hidden;
+}
+
+body.is-nav-open::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.65);
+    backdrop-filter: blur(6px);
+    z-index: 999;
+}
+
 img {
     max-width: 100%;
     display: block;
@@ -48,11 +73,29 @@ img {
 
 a {
     color: inherit;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
 }
 
-a:focus {
+:where(a,
+    button,
+    [role="button"],
+    input,
+    select,
+    textarea,
+    summary) {
+    outline-color: var(--color-accent);
+    outline-offset: 3px;
+}
+
+:where(a,
+    button,
+    [role="button"],
+    input,
+    select,
+    textarea,
+    summary):focus-visible {
     outline: 2px solid var(--color-accent);
-    outline-offset: 4px;
 }
 
 .container {
@@ -89,10 +132,27 @@ h4 {
     font-weight: 600;
 }
 
+h1 {
+    font-size: var(--font-size-display);
+    line-height: var(--line-height-tight);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-tight);
+}
+
+h3,
+h4 {
+    font-size: var(--font-size-h3);
+    line-height: 1.35;
+}
+
 p {
     margin-top: 0;
     margin-bottom: 16px;
     color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
 }
 
 .btn,
@@ -126,6 +186,16 @@ main:focus {
     padding: clamp(24px, 6vw, 36px);
 }
 
+.surface--light {
+    background: rgba(248, 250, 252, 0.06);
+    border: 1px solid rgba(241, 245, 249, 0.12);
+    color: var(--color-text-primary);
+}
+
+.surface--light p {
+    color: var(--color-text-secondary);
+}
+
 .badge {
     display: inline-flex;
     align-items: center;
@@ -153,5 +223,19 @@ main:focus {
 @media (max-width: 768px) {
     :root {
         --header-height: 76px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
     }
 }

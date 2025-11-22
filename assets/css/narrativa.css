@@ -1,0 +1,156 @@
+.manifesto {
+    background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 55%), var(--color-bg-primary);
+}
+
+.manifesto__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(32px, 6vw, 48px);
+    align-items: center;
+}
+
+.manifesto__intro h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.manifesto__intro p {
+    font-size: 1rem;
+    max-width: 52ch;
+}
+
+.manifesto__cta {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.manifesto__highlights ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.manifesto__highlights li {
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.storytelling {
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(99, 102, 241, 0.08));
+}
+
+.storytelling__intro {
+    max-width: 60ch;
+    margin-bottom: 32px;
+}
+
+.storytelling__timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.storytelling__card {
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 20px;
+    padding: 24px;
+    position: relative;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.storytelling__card--highlight {
+    border-color: rgba(249, 115, 22, 0.5);
+    box-shadow: 0 20px 50px rgba(249, 115, 22, 0.2);
+}
+
+.storytelling__chapter {
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.storytelling__cta {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.estrategia {
+    background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.08), transparent 60%), var(--color-bg-secondary);
+    color: var(--color-text-primary);
+}
+
+.estrategia__header {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 48px auto;
+}
+
+.estrategia__header h2 {
+    color: #f8fafc;
+}
+
+.estrategia__header p {
+    color: rgba(226, 232, 240, 0.78);
+}
+
+.estrategia__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.estrategia-card {
+    background: #f8fafc;
+    border-radius: 22px;
+    padding: 28px;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    box-shadow: 0 18px 30px rgba(148, 163, 184, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.estrategia-card__index {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2563eb;
+    letter-spacing: 0.18em;
+}
+
+.estrategia-card h3 {
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.estrategia-card p {
+    color: #475569;
+    margin: 0;
+}
+
+.estrategia__cta {
+    margin-top: 36px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+@media (max-width: 768px) {
+    .manifesto__cta,
+    .storytelling__cta,
+    .estrategia__cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
